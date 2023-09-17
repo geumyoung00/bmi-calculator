@@ -11,6 +11,11 @@ function App() {
     setHeight(e.target.value);
   };
 
+  const heightCalc = (height / 100) * (height / 100);
+  //   console.log(heightCalc);
+
+  const bmiCalc = weight / heightCalc;
+
   return (
     <main>
       <h1>Project 4: BMI CALCULATOR</h1>
@@ -40,7 +45,7 @@ function App() {
       </div>
       <div className="output-section">
         <p>Your BMI is</p>
-        <p className="output">{20}</p>
+        <p className="output">{bmiCalc.toFixed(2)}</p>
       </div>
     </main>
   );
